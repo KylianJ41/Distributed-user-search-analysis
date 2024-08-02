@@ -3,6 +3,11 @@
 #include <random>
 #include <algorithm>
 
+SimpleLogGenerator::SimpleLogGenerator(int minUserId, int maxUserId)
+    : minUserId(minUserId), maxUserId(maxUserId)
+{
+}
+
 std::vector<LogEntry> SimpleLogGenerator::generateLogs(int count)
 {
     std::vector<LogEntry> logs;

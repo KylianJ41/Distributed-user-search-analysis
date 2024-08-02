@@ -21,9 +21,12 @@ public:
 class SimpleLogGenerator : public LogGenerator
 {
 public:
+    SimpleLogGenerator(int minUserId = 101, int maxUserId = 1000);
     std::vector<LogEntry> generateLogs(int count) override;
 
 private:
     std::string generateTimestamp();
     std::vector<std::string> generateMockResults();
+    int minUserId;
+    int maxUserId;
 };

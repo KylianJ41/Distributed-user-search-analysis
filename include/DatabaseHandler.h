@@ -4,6 +4,7 @@
 #include "LogGenerator.h"
 #include <string>
 #include <vector>
+#include <iostream>
 
 class DatabaseHandler
 {
@@ -14,6 +15,8 @@ public:
     void insertSearchLogs(const std::vector<LogEntry> &logs);
     pqxx::result executeQuery(const std::string &query);
     void createSearchLogsTable();
+
+    bool isConnected() const { return conn && conn->is_open(); }
 
 private:
     std::unique_ptr<pqxx::connection> conn;
