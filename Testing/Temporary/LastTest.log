@@ -1,0 +1,165 @@
+Start testing: Aug 04 00:30 CEST
+----------------------------------------------------------
+1/2 Testing: DatabaseHandlerTest
+1/2 Test: DatabaseHandlerTest
+Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/DatabaseHandlerTest"
+Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
+"DatabaseHandlerTest" start time: Aug 04 00:30 CEST
+Output:
+----------------------------------------------------------
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from DatabaseHandlerTest
+[ RUN      ] DatabaseHandlerTest.InsertAndRetrieveLogs
+Setting up test environment
+Current working directory: "/home/kylian/Documents/Code/cpp/UserAnalysis"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
+Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
+Loaded environment variable: DB_HOST
+Loaded environment variable: DB_PORT
+Loaded environment variable: DB_NAME
+Loaded environment variable: DB_USER
+Loaded environment variable: DB_PASSWORD
+.env file loaded successfully
+Creating DatabaseHandler
+Initializing DatabaseHandler with config: config.ini
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
+Connected successfully
+DatabaseHandler created successfully
+Creating search logs table
+Creating table: search_logs
+Table created successfully
+Cleaning up test data
+Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
+Query executed successfully
+Test data cleaned up
+Setup complete
+Starting InsertAndRetrieveLogs test
+Test logs:
+User ID: 1
+Search Query: test query 1
+Timestamp: 2023-01-01 12:00:00
+Search Results: result1 result2 
+User ID: 2
+Search Query: test query 2
+Timestamp: 2023-01-02 13:00:00
+Search Results: result3 result4 
+Inserting test logs
+Inserting multiple search logs
+Inserting search log
+User ID: 1
+Search Query: test query 1
+Timestamp: 2023-01-01 12:00:00
+Number of search results: 2
+Converting vector to Postgres array
+Converted array: {"result1","result2"}
+Converted search results array: {"result1","result2"}
+Creating transaction
+Transaction created
+Executing query
+Query executed
+Committing transaction
+Transaction committed
+Search log inserted successfully
+Inserting search log
+User ID: 2
+Search Query: test query 2
+Timestamp: 2023-01-02 13:00:00
+Number of search results: 2
+Converting vector to Postgres array
+Converted array: {"result3","result4"}
+Converted search results array: {"result3","result4"}
+Creating transaction
+Transaction created
+Executing query
+Query executed
+Committing transaction
+Transaction committed
+Search log inserted successfully
+All search logs inserted successfully
+Retrieving inserted logs
+Executing query: SELECT * FROM search_logs WHERE user_id BETWEEN 1 AND 100 ORDER BY user_id
+Query executed successfully
+Asserting results
+InsertAndRetrieveLogs test completed successfully
+Cleaning up test data
+Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
+Query executed successfully
+Test data cleaned up
+[       OK ] DatabaseHandlerTest.InsertAndRetrieveLogs (51 ms)
+[ RUN      ] DatabaseHandlerTest.CreateTableIdempotent
+Setting up test environment
+Current working directory: "/home/kylian/Documents/Code/cpp/UserAnalysis"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
+Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
+Loaded environment variable: DB_HOST
+Loaded environment variable: DB_PORT
+Loaded environment variable: DB_NAME
+Loaded environment variable: DB_USER
+Loaded environment variable: DB_PASSWORD
+.env file loaded successfully
+Creating DatabaseHandler
+Initializing DatabaseHandler with config: config.ini
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
+Connected successfully
+DatabaseHandler created successfully
+Creating search logs table
+Creating table: search_logs
+Table created successfully
+Cleaning up test data
+Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
+Query executed successfully
+Test data cleaned up
+Setup complete
+Creating table: search_logs
+Table created successfully
+Creating table: search_logs
+Table created successfully
+Cleaning up test data
+Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
+Query executed successfully
+Test data cleaned up
+[       OK ] DatabaseHandlerTest.CreateTableIdempotent (33 ms)
+[----------] 2 tests from DatabaseHandlerTest (85 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (85 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"DatabaseHandlerTest" end time: Aug 04 00:30 CEST
+"DatabaseHandlerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: LogGeneratorTest
+2/2 Test: LogGeneratorTest
+Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/LogGeneratorTest"
+Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
+"LogGeneratorTest" start time: Aug 04 00:30 CEST
+Output:
+----------------------------------------------------------
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from LogGeneratorTest
+[ RUN      ] LogGeneratorTest.GeneratesCorrectNumberOfLogs
+[       OK ] LogGeneratorTest.GeneratesCorrectNumberOfLogs (0 ms)
+[----------] 1 test from LogGeneratorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"LogGeneratorTest" end time: Aug 04 00:30 CEST
+"LogGeneratorTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 04 00:30 CEST

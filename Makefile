@@ -127,17 +127,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named LogGenerator
+# Target rules for targets named common
 
 # Build rule for target.
-LogGenerator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 LogGenerator
-.PHONY : LogGenerator
+common: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common
+.PHONY : common
 
 # fast build rule for target.
-LogGenerator/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGenerator.dir/build.make CMakeFiles/LogGenerator.dir/build
-.PHONY : LogGenerator/fast
+common/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/build
+.PHONY : common/fast
+
+#=============================================================================
+# Target rules for targets named user_analysis
+
+# Build rule for target.
+user_analysis: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 user_analysis
+.PHONY : user_analysis
+
+# fast build rule for target.
+user_analysis/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis.dir/build.make CMakeFiles/user_analysis.dir/build
+.PHONY : user_analysis/fast
+
+#=============================================================================
+# Target rules for targets named DatabaseHandlerTest
+
+# Build rule for target.
+DatabaseHandlerTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DatabaseHandlerTest
+.PHONY : DatabaseHandlerTest
+
+# fast build rule for target.
+DatabaseHandlerTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DatabaseHandlerTest.dir/build.make CMakeFiles/DatabaseHandlerTest.dir/build
+.PHONY : DatabaseHandlerTest/fast
 
 #=============================================================================
 # Target rules for targets named LogGeneratorTest
@@ -152,53 +178,149 @@ LogGeneratorTest/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/build
 .PHONY : LogGeneratorTest/fast
 
-src/LogGenerator.o: src/LogGenerator.cpp.o
-.PHONY : src/LogGenerator.o
+src/common/ConfigReader.o: src/common/ConfigReader.cpp.o
+.PHONY : src/common/ConfigReader.o
 
 # target to build an object file
-src/LogGenerator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGenerator.dir/build.make CMakeFiles/LogGenerator.dir/src/LogGenerator.cpp.o
-.PHONY : src/LogGenerator.cpp.o
+src/common/ConfigReader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/ConfigReader.cpp.o
+.PHONY : src/common/ConfigReader.cpp.o
 
-src/LogGenerator.i: src/LogGenerator.cpp.i
-.PHONY : src/LogGenerator.i
+src/common/ConfigReader.i: src/common/ConfigReader.cpp.i
+.PHONY : src/common/ConfigReader.i
 
 # target to preprocess a source file
-src/LogGenerator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGenerator.dir/build.make CMakeFiles/LogGenerator.dir/src/LogGenerator.cpp.i
-.PHONY : src/LogGenerator.cpp.i
+src/common/ConfigReader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/ConfigReader.cpp.i
+.PHONY : src/common/ConfigReader.cpp.i
 
-src/LogGenerator.s: src/LogGenerator.cpp.s
-.PHONY : src/LogGenerator.s
+src/common/ConfigReader.s: src/common/ConfigReader.cpp.s
+.PHONY : src/common/ConfigReader.s
 
 # target to generate assembly for a file
-src/LogGenerator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGenerator.dir/build.make CMakeFiles/LogGenerator.dir/src/LogGenerator.cpp.s
-.PHONY : src/LogGenerator.cpp.s
+src/common/ConfigReader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/ConfigReader.cpp.s
+.PHONY : src/common/ConfigReader.cpp.s
 
-src/LogGenerator_test.o: src/LogGenerator_test.cpp.o
-.PHONY : src/LogGenerator_test.o
+src/common/DatabaseHandler.o: src/common/DatabaseHandler.cpp.o
+.PHONY : src/common/DatabaseHandler.o
 
 # target to build an object file
-src/LogGenerator_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/src/LogGenerator_test.cpp.o
-.PHONY : src/LogGenerator_test.cpp.o
+src/common/DatabaseHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/DatabaseHandler.cpp.o
+.PHONY : src/common/DatabaseHandler.cpp.o
 
-src/LogGenerator_test.i: src/LogGenerator_test.cpp.i
-.PHONY : src/LogGenerator_test.i
+src/common/DatabaseHandler.i: src/common/DatabaseHandler.cpp.i
+.PHONY : src/common/DatabaseHandler.i
 
 # target to preprocess a source file
-src/LogGenerator_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/src/LogGenerator_test.cpp.i
-.PHONY : src/LogGenerator_test.cpp.i
+src/common/DatabaseHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/DatabaseHandler.cpp.i
+.PHONY : src/common/DatabaseHandler.cpp.i
 
-src/LogGenerator_test.s: src/LogGenerator_test.cpp.s
-.PHONY : src/LogGenerator_test.s
+src/common/DatabaseHandler.s: src/common/DatabaseHandler.cpp.s
+.PHONY : src/common/DatabaseHandler.s
 
 # target to generate assembly for a file
-src/LogGenerator_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/src/LogGenerator_test.cpp.s
-.PHONY : src/LogGenerator_test.cpp.s
+src/common/DatabaseHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/DatabaseHandler.cpp.s
+.PHONY : src/common/DatabaseHandler.cpp.s
+
+src/common/LogGenerator.o: src/common/LogGenerator.cpp.o
+.PHONY : src/common/LogGenerator.o
+
+# target to build an object file
+src/common/LogGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/LogGenerator.cpp.o
+.PHONY : src/common/LogGenerator.cpp.o
+
+src/common/LogGenerator.i: src/common/LogGenerator.cpp.i
+.PHONY : src/common/LogGenerator.i
+
+# target to preprocess a source file
+src/common/LogGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/LogGenerator.cpp.i
+.PHONY : src/common/LogGenerator.cpp.i
+
+src/common/LogGenerator.s: src/common/LogGenerator.cpp.s
+.PHONY : src/common/LogGenerator.s
+
+# target to generate assembly for a file
+src/common/LogGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/LogGenerator.cpp.s
+.PHONY : src/common/LogGenerator.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis.dir/build.make CMakeFiles/user_analysis.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis.dir/build.make CMakeFiles/user_analysis.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis.dir/build.make CMakeFiles/user_analysis.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+tests/DatabaseHandler_test.o: tests/DatabaseHandler_test.cpp.o
+.PHONY : tests/DatabaseHandler_test.o
+
+# target to build an object file
+tests/DatabaseHandler_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DatabaseHandlerTest.dir/build.make CMakeFiles/DatabaseHandlerTest.dir/tests/DatabaseHandler_test.cpp.o
+.PHONY : tests/DatabaseHandler_test.cpp.o
+
+tests/DatabaseHandler_test.i: tests/DatabaseHandler_test.cpp.i
+.PHONY : tests/DatabaseHandler_test.i
+
+# target to preprocess a source file
+tests/DatabaseHandler_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DatabaseHandlerTest.dir/build.make CMakeFiles/DatabaseHandlerTest.dir/tests/DatabaseHandler_test.cpp.i
+.PHONY : tests/DatabaseHandler_test.cpp.i
+
+tests/DatabaseHandler_test.s: tests/DatabaseHandler_test.cpp.s
+.PHONY : tests/DatabaseHandler_test.s
+
+# target to generate assembly for a file
+tests/DatabaseHandler_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DatabaseHandlerTest.dir/build.make CMakeFiles/DatabaseHandlerTest.dir/tests/DatabaseHandler_test.cpp.s
+.PHONY : tests/DatabaseHandler_test.cpp.s
+
+tests/LogGenerator_test.o: tests/LogGenerator_test.cpp.o
+.PHONY : tests/LogGenerator_test.o
+
+# target to build an object file
+tests/LogGenerator_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/tests/LogGenerator_test.cpp.o
+.PHONY : tests/LogGenerator_test.cpp.o
+
+tests/LogGenerator_test.i: tests/LogGenerator_test.cpp.i
+.PHONY : tests/LogGenerator_test.i
+
+# target to preprocess a source file
+tests/LogGenerator_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/tests/LogGenerator_test.cpp.i
+.PHONY : tests/LogGenerator_test.cpp.i
+
+tests/LogGenerator_test.s: tests/LogGenerator_test.cpp.s
+.PHONY : tests/LogGenerator_test.s
+
+# target to generate assembly for a file
+tests/LogGenerator_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/tests/LogGenerator_test.cpp.s
+.PHONY : tests/LogGenerator_test.cpp.s
 
 # Help Target
 help:
@@ -209,14 +331,28 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... LogGenerator"
+	@echo "... DatabaseHandlerTest"
 	@echo "... LogGeneratorTest"
-	@echo "... src/LogGenerator.o"
-	@echo "... src/LogGenerator.i"
-	@echo "... src/LogGenerator.s"
-	@echo "... src/LogGenerator_test.o"
-	@echo "... src/LogGenerator_test.i"
-	@echo "... src/LogGenerator_test.s"
+	@echo "... common"
+	@echo "... user_analysis"
+	@echo "... src/common/ConfigReader.o"
+	@echo "... src/common/ConfigReader.i"
+	@echo "... src/common/ConfigReader.s"
+	@echo "... src/common/DatabaseHandler.o"
+	@echo "... src/common/DatabaseHandler.i"
+	@echo "... src/common/DatabaseHandler.s"
+	@echo "... src/common/LogGenerator.o"
+	@echo "... src/common/LogGenerator.i"
+	@echo "... src/common/LogGenerator.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... tests/DatabaseHandler_test.o"
+	@echo "... tests/DatabaseHandler_test.i"
+	@echo "... tests/DatabaseHandler_test.s"
+	@echo "... tests/LogGenerator_test.o"
+	@echo "... tests/LogGenerator_test.i"
+	@echo "... tests/LogGenerator_test.s"
 .PHONY : help
 
 

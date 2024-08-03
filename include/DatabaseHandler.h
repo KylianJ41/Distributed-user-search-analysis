@@ -9,7 +9,7 @@
 class DatabaseHandler
 {
 public:
-    DatabaseHandler(const std::string &configPath = "config.ini");
+    DatabaseHandler(const std::string &configFilename = "config.ini");
     void createTable(const std::string &tableName, const std::vector<std::string> &columns);
     void insertSearchLog(const LogEntry &log);
     void insertSearchLogs(const std::vector<LogEntry> &logs);

@@ -1,5 +1,6 @@
-#include <gtest/gtest.h>
 #include "../include/DatabaseHandler.h"
+#include "../include/FileUtils.h"
+#include <gtest/gtest.h>
 #include <pqxx/pqxx>
 #include <fstream>
 
@@ -16,37 +17,15 @@ protected:
         try
         {
             std::cout << "Setting up test environment" << std::endl;
+            std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
 
             // Load environment variables from .env file
-            std::ifstream envFile("../.env");
-            if (envFile.is_open())
-            {
-                std::string line;
-                while (std::getline(envFile, line))
-                {
-                    size_t pos = line.find('=');
-                    if (pos != std::string::npos)
-                    {
-                        std::string key = line.substr(0, pos);
-                        std::string value = line.substr(pos + 1);
-                        setenv(key.c_str(), value.c_str(), 1);
-                    }
-                }
-                envFile.close();
-            }
-            else
-            {
-                std::cerr << "Unable to open .env file" << std::endl;
-                throw std::runtime_error("Failed to load environment variables");
-            }
+            FileUtils::loadEnv(".env");
+            std::cout << ".env file loaded successfully" << std::endl;
 
             std::cout << "Creating DatabaseHandler" << std::endl;
-            handler = std::make_unique<DatabaseHandler>("../config.ini");
-
-            if (!handler)
-            {
-                throw std::runtime_error("Failed to create DatabaseHandler");
-            }
+            handler = std::make_unique<DatabaseHandler>("config.ini");
+            std::cout << "DatabaseHandler created successfully" << std::endl;
 
             if (!handler->isConnected())
             {
@@ -55,6 +34,10 @@ protected:
 
             std::cout << "Creating search logs table" << std::endl;
             handler->createSearchLogsTable();
+
+            // Clean up any existing test data
+            cleanupTestData();
+
             std::cout << "Setup complete" << std::endl;
         }
         catch (const std::exception &e)
@@ -66,21 +49,23 @@ protected:
 
     void TearDown() override
     {
+        cleanupTestData();
+    }
+
+    void cleanupTestData()
+    {
         try
         {
             std::cout << "Cleaning up test data" << std::endl;
-
-            // Delete test data based on the reserved user ID range
             std::string cleanup_query = "DELETE FROM search_logs WHERE user_id BETWEEN " +
                                         std::to_string(TEST_USER_ID_START) + " AND " +
                                         std::to_string(TEST_USER_ID_END);
             handler->executeQuery(cleanup_query);
-
             std::cout << "Test data cleaned up" << std::endl;
         }
         catch (const std::exception &e)
         {
-            std::cerr << "Error in TearDown: " << e.what() << std::endl;
+            std::cerr << "Error in cleanupTestData: " << e.what() << std::endl;
         }
     }
 

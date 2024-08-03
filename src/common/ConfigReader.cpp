@@ -1,14 +1,16 @@
-#include "../include/ConfigReader.h"
+#include "../../include/ConfigReader.h"
+#include "../../include/FileUtils.h"
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
 
 ConfigReader::ConfigReader(const std::string &filename)
 {
-    std::ifstream file(filename);
+    std::string configPath = FileUtils::findFile(filename);
+    std::ifstream file(configPath);
     if (!file.is_open())
     {
-        throw std::runtime_error("Could not open config file: " + filename);
+        throw std::runtime_error("Could not open config file: " + configPath);
     }
 
     std::string line;

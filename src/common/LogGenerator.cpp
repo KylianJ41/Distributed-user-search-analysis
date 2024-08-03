@@ -1,4 +1,4 @@
-#include "../include/LogGenerator.h"
+#include "../../include/LogGenerator.h"
 #include <chrono>
 #include <random>
 #include <algorithm>

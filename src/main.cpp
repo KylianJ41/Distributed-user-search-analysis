@@ -26,28 +26,33 @@ void populateDatabase(DatabaseHandler &db, int numEntries)
     }
 }
 
-int main()
+void addXLogsToDatabase(int numEntries)
 {
     try
     {
         std::string envPath = FileUtils::findFile(".env");
-        FileUtils::loadEnv(".env");
+        FileUtils::loadEnv(envPath);
 
-        std::string configPath = FileUtils::findFile("config.ini");
         std::cout << "Initializing DatabaseHandler..." << std::endl;
-        DatabaseHandler db(configPath);
+        DatabaseHandler db("config.ini");
 
-        int numEntries = 100;
-        std::cout << "Populating database with " << numEntries << " entries..." << std::endl;
+        std::cout << "Creating search_logs table if it doesn't exist..." << std::endl;
+        db.createSearchLogsTable();
+
+        // Add 100 entries to the database
         populateDatabase(db, numEntries);
 
-        std::cout << "Database initialization complete." << std::endl;
+        std::cout << "Main logic completed successfully." << std::endl;
     }
     catch (const std::exception &e)
     {
-        std::cerr << "Error in main: " << e.what() << std::endl;
-        return 1;
+        std::cerr << "Error in main logic: " << e.what() << std::endl;
+        throw; // Re-throw the exception to be caught in main()
     }
+}
+
+int main()
+{
 
     return 0;
 }

@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <fstream>
 #include <iostream>
+#include <vector>
 
 namespace FileUtils
 {
@@ -12,18 +13,25 @@ namespace FileUtils
     inline std::string findFile(const std::string &filename)
     {
         namespace fs = std::filesystem;
-        fs::path currentPath = fs::current_path();
-        fs::path filePath = currentPath / filename;
+        std::vector<fs::path> searchPaths = {
+            fs::current_path(),
+            fs::current_path() / "..",
+            fs::current_path() / ".." / "..",
+            fs::current_path() / ".." / "UserAnalysis",
+            fs::current_path() / "UserAnalysis"};
 
-        if (fs::exists(filePath))
+        for (const auto &basePath : searchPaths)
         {
-            return filePath.string();
-        }
-
-        filePath = currentPath / ".." / filename;
-        if (fs::exists(filePath))
-        {
-            return filePath.string();
+            fs::path filePath = basePath / filename;
+            if (fs::exists(filePath))
+            {
+                std::cout << "Found file: " << filePath << std::endl;
+                return filePath.string();
+            }
+            else
+            {
+                std::cout << "File not found at: " << filePath << std::endl;
+            }
         }
 
         throw std::runtime_error("Could not find file: " + filename);
@@ -31,22 +39,34 @@ namespace FileUtils
 
     inline void loadEnv(const std::string &filename)
     {
-        std::ifstream file(filename);
-        if (!file.is_open())
+        try
         {
-            std::cerr << "Warning: Could not open .env file: " << filename << std::endl;
-            return;
-        }
-        std::string line;
-        while (std::getline(file, line))
-        {
-            size_t pos = line.find('=');
-            if (pos != std::string::npos)
+            std::string envPath = findFile(filename);
+            std::ifstream file(envPath);
+            if (!file.is_open())
             {
-                std::string key = line.substr(0, pos);
-                std::string value = line.substr(pos + 1);
-                setenv(key.c_str(), value.c_str(), 1);
+                throw std::runtime_error("Could not open .env file: " + envPath);
             }
+
+            std::cout << "Loading .env file from: " << envPath << std::endl;
+
+            std::string line;
+            while (std::getline(file, line))
+            {
+                size_t pos = line.find('=');
+                if (pos != std::string::npos)
+                {
+                    std::string key = line.substr(0, pos);
+                    std::string value = line.substr(pos + 1);
+                    setenv(key.c_str(), value.c_str(), 1);
+                    std::cout << "Loaded environment variable: " << key << std::endl;
+                }
+            }
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << "Error in loadEnv: " << e.what() << std::endl;
+            throw;
         }
     }
 

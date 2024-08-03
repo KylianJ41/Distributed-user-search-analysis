@@ -1,14 +1,16 @@
-#include "../include/DatabaseHandler.h"
-#include "../include/ConfigReader.h"
+#include "../../include/DatabaseHandler.h"
+#include "../../include/ConfigReader.h"
+#include "../../include/FileUtils.h"
 #include <sstream>
 #include <stdexcept>
 
-DatabaseHandler::DatabaseHandler(const std::string &configPath)
+DatabaseHandler::DatabaseHandler(const std::string &configFilename)
 {
     try
     {
-        std::cout << "Initializing DatabaseHandler with config: " << configPath << std::endl;
-        ConfigReader config(configPath);
+        std::cout << "Initializing DatabaseHandler with config: " << configFilename << std::endl;
+        std::string configFilePath = FileUtils::findFile(configFilename);
+        ConfigReader config(configFilePath);
         std::string connString =
             "host=" + config.get("database", "host") +
             " port=" + config.get("database", "port") +
