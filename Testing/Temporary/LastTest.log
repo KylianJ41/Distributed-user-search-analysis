@@ -1,15 +1,15 @@
-Start testing: Aug 05 13:25 CEST
+Start testing: Aug 05 14:43 CEST
 ----------------------------------------------------------
 1/3 Testing: MasterNodeTest
 1/3 Test: MasterNodeTest
 Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/masternode_test"
 Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
-"MasterNodeTest" start time: Aug 05 13:25 CEST
+"MasterNodeTest" start time: Aug 05 14:43 CEST
 Output:
 ----------------------------------------------------------
-[==========] Running 5 tests from 1 test suite.
+[==========] Running 6 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 5 tests from MasterNodeTest
+[----------] 6 tests from MasterNodeTest
 [ RUN      ] MasterNodeTest.InitializeTaskQueue
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
 Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
@@ -23,7 +23,19 @@ Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
 Connected successfully
-[       OK ] MasterNodeTest.InitializeTaskQueue (39 ms)
+Initializing task queue with 1000 total users and 100 users per task
+Created task with ID: task_1
+Created task with ID: task_2
+Created task with ID: task_3
+Created task with ID: task_4
+Created task with ID: task_5
+Created task with ID: task_6
+Created task with ID: task_7
+Created task with ID: task_8
+Created task with ID: task_9
+Created task with ID: task_10
+Finished initializing task queue. Total tasks created: 10
+[       OK ] MasterNodeTest.InitializeTaskQueue (30 ms)
 [ RUN      ] MasterNodeTest.GetNextTaskSuccess
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
 Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
@@ -37,7 +49,19 @@ Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
 Connected successfully
-[       OK ] MasterNodeTest.GetNextTaskSuccess (26 ms)
+Initializing task queue with 1000 total users and 100 users per task
+Created task with ID: task_1
+Created task with ID: task_2
+Created task with ID: task_3
+Created task with ID: task_4
+Created task with ID: task_5
+Created task with ID: task_6
+Created task with ID: task_7
+Created task with ID: task_8
+Created task with ID: task_9
+Created task with ID: task_10
+Finished initializing task queue. Total tasks created: 10
+[       OK ] MasterNodeTest.GetNextTaskSuccess (30 ms)
 [ RUN      ] MasterNodeTest.GetNextTaskEmptyQueue
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
 Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
@@ -51,7 +75,7 @@ Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
 Connected successfully
-[       OK ] MasterNodeTest.GetNextTaskEmptyQueue (29 ms)
+[       OK ] MasterNodeTest.GetNextTaskEmptyQueue (26 ms)
 [ RUN      ] MasterNodeTest.SubmitTaskResult
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
 Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
@@ -65,7 +89,22 @@ Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
 Connected successfully
-[       OK ] MasterNodeTest.SubmitTaskResult (28 ms)
+Initializing task queue with 1000 total users and 100 users per task
+Created task with ID: task_1
+Created task with ID: task_2
+Created task with ID: task_3
+Created task with ID: task_4
+Created task with ID: task_5
+Created task with ID: task_6
+Created task with ID: task_7
+Created task with ID: task_8
+Created task with ID: task_9
+Created task with ID: task_10
+Finished initializing task queue. Total tasks created: 10
+Submitting result for task ID: task_1
+Number of created task IDs: 10
+Task result submitted successfully
+[       OK ] MasterNodeTest.SubmitTaskResult (27 ms)
 [ RUN      ] MasterNodeTest.GetAggregatedResults
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
 Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
@@ -79,17 +118,64 @@ Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
 Connected successfully
-[       OK ] MasterNodeTest.GetAggregatedResults (23 ms)
-[----------] 5 tests from MasterNodeTest (147 ms total)
+Initializing task queue with 1000 total users and 100 users per task
+Created task with ID: task_1
+Created task with ID: task_2
+Created task with ID: task_3
+Created task with ID: task_4
+Created task with ID: task_5
+Created task with ID: task_6
+Created task with ID: task_7
+Created task with ID: task_8
+Created task with ID: task_9
+Created task with ID: task_10
+Finished initializing task queue. Total tasks created: 10
+Submitting result for task ID: task_1
+Number of created task IDs: 10
+Task result submitted successfully
+Submitting result for task ID: task_10
+Number of created task IDs: 9
+Task result submitted successfully
+[       OK ] MasterNodeTest.GetAggregatedResults (19 ms)
+[ RUN      ] MasterNodeTest.SubmitInvalidTaskResult
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
+Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
+Loaded environment variable: DB_HOST
+Loaded environment variable: DB_PORT
+Loaded environment variable: DB_NAME
+Loaded environment variable: DB_USER
+Loaded environment variable: DB_PASSWORD
+Initializing DatabaseHandler with config: config.ini
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
+Connected successfully
+Initializing task queue with 1000 total users and 100 users per task
+Created task with ID: task_1
+Created task with ID: task_2
+Created task with ID: task_3
+Created task with ID: task_4
+Created task with ID: task_5
+Created task with ID: task_6
+Created task with ID: task_7
+Created task with ID: task_8
+Created task with ID: task_9
+Created task with ID: task_10
+Finished initializing task queue. Total tasks created: 10
+Submitting result for task ID: task_0
+Number of created task IDs: 10
+Task ID not found in createdTaskIds
+[       OK ] MasterNodeTest.SubmitInvalidTaskResult (21 ms)
+[----------] 6 tests from MasterNodeTest (155 ms total)
 
 [----------] Global test environment tear-down
-[==========] 5 tests from 1 test suite ran. (147 ms total)
-[  PASSED  ] 5 tests.
+[==========] 6 tests from 1 test suite ran. (156 ms total)
+[  PASSED  ] 6 tests.
 <end of output>
-Test time =   0.21 sec
+Test time =   0.17 sec
 ----------------------------------------------------------
 Test Passed.
-"MasterNodeTest" end time: Aug 05 13:25 CEST
+"MasterNodeTest" end time: Aug 05 14:43 CEST
 "MasterNodeTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -97,7 +183,7 @@ Test Passed.
 2/3 Test: DatabaseHandlerTest
 Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/databasehandler_test"
 Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
-"DatabaseHandlerTest" start time: Aug 05 13:25 CEST
+"DatabaseHandlerTest" start time: Aug 05 14:43 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 2 tests from 1 test suite.
@@ -181,7 +267,7 @@ Cleaning up test data
 Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
 Query executed successfully
 Test data cleaned up
-[       OK ] DatabaseHandlerTest.InsertAndRetrieveLogs (73 ms)
+[       OK ] DatabaseHandlerTest.InsertAndRetrieveLogs (68 ms)
 [ RUN      ] DatabaseHandlerTest.CreateTableIdempotent
 Setting up test environment
 Current working directory: "/home/kylian/Documents/Code/cpp/UserAnalysis"
@@ -216,17 +302,17 @@ Cleaning up test data
 Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
 Query executed successfully
 Test data cleaned up
-[       OK ] DatabaseHandlerTest.CreateTableIdempotent (25 ms)
-[----------] 2 tests from DatabaseHandlerTest (99 ms total)
+[       OK ] DatabaseHandlerTest.CreateTableIdempotent (33 ms)
+[----------] 2 tests from DatabaseHandlerTest (101 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (99 ms total)
+[==========] 2 tests from 1 test suite ran. (101 ms total)
 [  PASSED  ] 2 tests.
 <end of output>
-Test time =   0.12 sec
+Test time =   0.17 sec
 ----------------------------------------------------------
 Test Passed.
-"DatabaseHandlerTest" end time: Aug 05 13:25 CEST
+"DatabaseHandlerTest" end time: Aug 05 14:43 CEST
 "DatabaseHandlerTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -234,7 +320,7 @@ Test Passed.
 3/3 Test: LogGeneratorTest
 Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/loggenerator_test"
 Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
-"LogGeneratorTest" start time: Aug 05 13:25 CEST
+"LogGeneratorTest" start time: Aug 05 14:43 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 1 test from 1 test suite.
@@ -251,8 +337,8 @@ Output:
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"LogGeneratorTest" end time: Aug 05 13:25 CEST
+"LogGeneratorTest" end time: Aug 05 14:43 CEST
 "LogGeneratorTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 05 13:25 CEST
+End testing: Aug 05 14:43 CEST

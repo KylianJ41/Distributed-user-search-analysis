@@ -27,11 +27,16 @@ public:
     std::map<std::string, int> getAggregatedResults() const;
     size_t getRemainingTaskCount() const;
 
+    std::string getValidTaskId() const;
+    void removeTaskId(const std::string &taskId);
+
 private:
     std::unique_ptr<DatabaseHandler> dbHandler;
     std::queue<user_analysis::Task> taskQueue;
+    std::set<std::string> createdTaskIds;
     std::map<std::string, std::vector<user_analysis::CategoryCount>> taskResults;
 
     mutable std::mutex taskQueueMutex;
     mutable std::mutex taskResultsMutex;
+    mutable std::mutex createdTaskIdsMutex;
 };
