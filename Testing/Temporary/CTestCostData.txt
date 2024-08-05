@@ -1,3 +1,4 @@
-DatabaseHandlerTest 2 0.0499394
-LogGeneratorTest 6 0.0010118
+DatabaseHandlerTest 4 0.0301933
+LogGeneratorTest 8 0.000642595
+MasterNodeTest 2 0.105004
 ---

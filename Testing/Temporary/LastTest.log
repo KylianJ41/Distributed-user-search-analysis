@@ -1,10 +1,103 @@
-Start testing: Aug 04 00:30 CEST
+Start testing: Aug 05 13:25 CEST
 ----------------------------------------------------------
-1/2 Testing: DatabaseHandlerTest
-1/2 Test: DatabaseHandlerTest
-Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/DatabaseHandlerTest"
+1/3 Testing: MasterNodeTest
+1/3 Test: MasterNodeTest
+Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/masternode_test"
 Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
-"DatabaseHandlerTest" start time: Aug 04 00:30 CEST
+"MasterNodeTest" start time: Aug 05 13:25 CEST
+Output:
+----------------------------------------------------------
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from MasterNodeTest
+[ RUN      ] MasterNodeTest.InitializeTaskQueue
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
+Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
+Loaded environment variable: DB_HOST
+Loaded environment variable: DB_PORT
+Loaded environment variable: DB_NAME
+Loaded environment variable: DB_USER
+Loaded environment variable: DB_PASSWORD
+Initializing DatabaseHandler with config: config.ini
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
+Connected successfully
+[       OK ] MasterNodeTest.InitializeTaskQueue (39 ms)
+[ RUN      ] MasterNodeTest.GetNextTaskSuccess
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
+Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
+Loaded environment variable: DB_HOST
+Loaded environment variable: DB_PORT
+Loaded environment variable: DB_NAME
+Loaded environment variable: DB_USER
+Loaded environment variable: DB_PASSWORD
+Initializing DatabaseHandler with config: config.ini
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
+Connected successfully
+[       OK ] MasterNodeTest.GetNextTaskSuccess (26 ms)
+[ RUN      ] MasterNodeTest.GetNextTaskEmptyQueue
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
+Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
+Loaded environment variable: DB_HOST
+Loaded environment variable: DB_PORT
+Loaded environment variable: DB_NAME
+Loaded environment variable: DB_USER
+Loaded environment variable: DB_PASSWORD
+Initializing DatabaseHandler with config: config.ini
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
+Connected successfully
+[       OK ] MasterNodeTest.GetNextTaskEmptyQueue (29 ms)
+[ RUN      ] MasterNodeTest.SubmitTaskResult
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
+Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
+Loaded environment variable: DB_HOST
+Loaded environment variable: DB_PORT
+Loaded environment variable: DB_NAME
+Loaded environment variable: DB_USER
+Loaded environment variable: DB_PASSWORD
+Initializing DatabaseHandler with config: config.ini
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
+Connected successfully
+[       OK ] MasterNodeTest.SubmitTaskResult (28 ms)
+[ RUN      ] MasterNodeTest.GetAggregatedResults
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
+Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
+Loaded environment variable: DB_HOST
+Loaded environment variable: DB_PORT
+Loaded environment variable: DB_NAME
+Loaded environment variable: DB_USER
+Loaded environment variable: DB_PASSWORD
+Initializing DatabaseHandler with config: config.ini
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
+Connected successfully
+[       OK ] MasterNodeTest.GetAggregatedResults (23 ms)
+[----------] 5 tests from MasterNodeTest (147 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (147 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.21 sec
+----------------------------------------------------------
+Test Passed.
+"MasterNodeTest" end time: Aug 05 13:25 CEST
+"MasterNodeTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: DatabaseHandlerTest
+2/3 Test: DatabaseHandlerTest
+Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/databasehandler_test"
+Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
+"DatabaseHandlerTest" start time: Aug 05 13:25 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 2 tests from 1 test suite.
@@ -88,7 +181,7 @@ Cleaning up test data
 Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
 Query executed successfully
 Test data cleaned up
-[       OK ] DatabaseHandlerTest.InsertAndRetrieveLogs (51 ms)
+[       OK ] DatabaseHandlerTest.InsertAndRetrieveLogs (73 ms)
 [ RUN      ] DatabaseHandlerTest.CreateTableIdempotent
 Setting up test environment
 Current working directory: "/home/kylian/Documents/Code/cpp/UserAnalysis"
@@ -123,25 +216,25 @@ Cleaning up test data
 Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
 Query executed successfully
 Test data cleaned up
-[       OK ] DatabaseHandlerTest.CreateTableIdempotent (33 ms)
-[----------] 2 tests from DatabaseHandlerTest (85 ms total)
+[       OK ] DatabaseHandlerTest.CreateTableIdempotent (25 ms)
+[----------] 2 tests from DatabaseHandlerTest (99 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (85 ms total)
+[==========] 2 tests from 1 test suite ran. (99 ms total)
 [  PASSED  ] 2 tests.
 <end of output>
-Test time =   0.10 sec
+Test time =   0.12 sec
 ----------------------------------------------------------
 Test Passed.
-"DatabaseHandlerTest" end time: Aug 04 00:30 CEST
+"DatabaseHandlerTest" end time: Aug 05 13:25 CEST
 "DatabaseHandlerTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/2 Testing: LogGeneratorTest
-2/2 Test: LogGeneratorTest
-Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/LogGeneratorTest"
+3/3 Testing: LogGeneratorTest
+3/3 Test: LogGeneratorTest
+Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/loggenerator_test"
 Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
-"LogGeneratorTest" start time: Aug 04 00:30 CEST
+"LogGeneratorTest" start time: Aug 05 13:25 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 1 test from 1 test suite.
@@ -158,8 +251,8 @@ Output:
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"LogGeneratorTest" end time: Aug 04 00:30 CEST
+"LogGeneratorTest" end time: Aug 05 13:25 CEST
 "LogGeneratorTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 04 00:30 CEST
+End testing: Aug 05 13:25 CEST

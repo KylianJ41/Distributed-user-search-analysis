@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package user_analysis;
+
+service UserAnalysisService {
+    rpc GetTask (GetTaskRequest) returns (Task) {}
+    rpc SubmitResult (TaskResult) returns (SubmitResultResponse) {}
+}
+
+message GetTaskRequest {
+    // TODO
+}
+
+message Task {
+    string id = 1;
+    int32 start_user_id = 2;
+    int32 end_user_id =3;
+}
+
+message TaskResult {
+    string task_id = 1;
+    repeated CategoryCount category_counts = 2;
+}
+
+message CategoryCount {
+    string category = 1;
+    int32 count = 2;
+}
+
+message SubmitResultResponse {
+    bool success = 1;
+}

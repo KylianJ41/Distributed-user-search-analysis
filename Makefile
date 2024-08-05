@@ -31,6 +31,9 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -127,63 +130,125 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named common
+# Target rules for targets named user_analysis_app
 
 # Build rule for target.
-common: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common
-.PHONY : common
+user_analysis_app: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 user_analysis_app
+.PHONY : user_analysis_app
 
 # fast build rule for target.
-common/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/build
-.PHONY : common/fast
+user_analysis_app/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/build
+.PHONY : user_analysis_app/fast
 
 #=============================================================================
-# Target rules for targets named user_analysis
+# Target rules for targets named masternode_test
 
 # Build rule for target.
-user_analysis: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 user_analysis
-.PHONY : user_analysis
+masternode_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 masternode_test
+.PHONY : masternode_test
 
 # fast build rule for target.
-user_analysis/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis.dir/build.make CMakeFiles/user_analysis.dir/build
-.PHONY : user_analysis/fast
+masternode_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/build
+.PHONY : masternode_test/fast
 
 #=============================================================================
-# Target rules for targets named DatabaseHandlerTest
+# Target rules for targets named databasehandler_test
 
 # Build rule for target.
-DatabaseHandlerTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DatabaseHandlerTest
-.PHONY : DatabaseHandlerTest
+databasehandler_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 databasehandler_test
+.PHONY : databasehandler_test
 
 # fast build rule for target.
-DatabaseHandlerTest/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DatabaseHandlerTest.dir/build.make CMakeFiles/DatabaseHandlerTest.dir/build
-.PHONY : DatabaseHandlerTest/fast
+databasehandler_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/build
+.PHONY : databasehandler_test/fast
 
 #=============================================================================
-# Target rules for targets named LogGeneratorTest
+# Target rules for targets named loggenerator_test
 
 # Build rule for target.
-LogGeneratorTest: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 LogGeneratorTest
-.PHONY : LogGeneratorTest
+loggenerator_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 loggenerator_test
+.PHONY : loggenerator_test
 
 # fast build rule for target.
-LogGeneratorTest/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/build
-.PHONY : LogGeneratorTest/fast
+loggenerator_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loggenerator_test.dir/build.make CMakeFiles/loggenerator_test.dir/build
+.PHONY : loggenerator_test/fast
+
+generated/user_analysis.grpc.pb.o: generated/user_analysis.grpc.pb.cc.o
+.PHONY : generated/user_analysis.grpc.pb.o
+
+# target to build an object file
+generated/user_analysis.grpc.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.grpc.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.grpc.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.grpc.pb.cc.o
+.PHONY : generated/user_analysis.grpc.pb.cc.o
+
+generated/user_analysis.grpc.pb.i: generated/user_analysis.grpc.pb.cc.i
+.PHONY : generated/user_analysis.grpc.pb.i
+
+# target to preprocess a source file
+generated/user_analysis.grpc.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.grpc.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.grpc.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.grpc.pb.cc.i
+.PHONY : generated/user_analysis.grpc.pb.cc.i
+
+generated/user_analysis.grpc.pb.s: generated/user_analysis.grpc.pb.cc.s
+.PHONY : generated/user_analysis.grpc.pb.s
+
+# target to generate assembly for a file
+generated/user_analysis.grpc.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.grpc.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.grpc.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.grpc.pb.cc.s
+.PHONY : generated/user_analysis.grpc.pb.cc.s
+
+generated/user_analysis.pb.o: generated/user_analysis.pb.cc.o
+.PHONY : generated/user_analysis.pb.o
+
+# target to build an object file
+generated/user_analysis.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.pb.cc.o
+.PHONY : generated/user_analysis.pb.cc.o
+
+generated/user_analysis.pb.i: generated/user_analysis.pb.cc.i
+.PHONY : generated/user_analysis.pb.i
+
+# target to preprocess a source file
+generated/user_analysis.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.pb.cc.i
+.PHONY : generated/user_analysis.pb.cc.i
+
+generated/user_analysis.pb.s: generated/user_analysis.pb.cc.s
+.PHONY : generated/user_analysis.pb.s
+
+# target to generate assembly for a file
+generated/user_analysis.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.pb.cc.s
+.PHONY : generated/user_analysis.pb.cc.s
 
 src/common/ConfigReader.o: src/common/ConfigReader.cpp.o
 .PHONY : src/common/ConfigReader.o
 
 # target to build an object file
 src/common/ConfigReader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/ConfigReader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/ConfigReader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/ConfigReader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/ConfigReader.cpp.o
 .PHONY : src/common/ConfigReader.cpp.o
 
 src/common/ConfigReader.i: src/common/ConfigReader.cpp.i
@@ -191,7 +256,9 @@ src/common/ConfigReader.i: src/common/ConfigReader.cpp.i
 
 # target to preprocess a source file
 src/common/ConfigReader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/ConfigReader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/ConfigReader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/ConfigReader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/ConfigReader.cpp.i
 .PHONY : src/common/ConfigReader.cpp.i
 
 src/common/ConfigReader.s: src/common/ConfigReader.cpp.s
@@ -199,7 +266,9 @@ src/common/ConfigReader.s: src/common/ConfigReader.cpp.s
 
 # target to generate assembly for a file
 src/common/ConfigReader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/ConfigReader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/ConfigReader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/ConfigReader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/ConfigReader.cpp.s
 .PHONY : src/common/ConfigReader.cpp.s
 
 src/common/DatabaseHandler.o: src/common/DatabaseHandler.cpp.o
@@ -207,7 +276,9 @@ src/common/DatabaseHandler.o: src/common/DatabaseHandler.cpp.o
 
 # target to build an object file
 src/common/DatabaseHandler.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/DatabaseHandler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/DatabaseHandler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/DatabaseHandler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/DatabaseHandler.cpp.o
 .PHONY : src/common/DatabaseHandler.cpp.o
 
 src/common/DatabaseHandler.i: src/common/DatabaseHandler.cpp.i
@@ -215,7 +286,9 @@ src/common/DatabaseHandler.i: src/common/DatabaseHandler.cpp.i
 
 # target to preprocess a source file
 src/common/DatabaseHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/DatabaseHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/DatabaseHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/DatabaseHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/DatabaseHandler.cpp.i
 .PHONY : src/common/DatabaseHandler.cpp.i
 
 src/common/DatabaseHandler.s: src/common/DatabaseHandler.cpp.s
@@ -223,7 +296,9 @@ src/common/DatabaseHandler.s: src/common/DatabaseHandler.cpp.s
 
 # target to generate assembly for a file
 src/common/DatabaseHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/DatabaseHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/DatabaseHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/DatabaseHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/DatabaseHandler.cpp.s
 .PHONY : src/common/DatabaseHandler.cpp.s
 
 src/common/LogGenerator.o: src/common/LogGenerator.cpp.o
@@ -231,7 +306,8 @@ src/common/LogGenerator.o: src/common/LogGenerator.cpp.o
 
 # target to build an object file
 src/common/LogGenerator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/LogGenerator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/LogGenerator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loggenerator_test.dir/build.make CMakeFiles/loggenerator_test.dir/src/common/LogGenerator.cpp.o
 .PHONY : src/common/LogGenerator.cpp.o
 
 src/common/LogGenerator.i: src/common/LogGenerator.cpp.i
@@ -239,7 +315,8 @@ src/common/LogGenerator.i: src/common/LogGenerator.cpp.i
 
 # target to preprocess a source file
 src/common/LogGenerator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/LogGenerator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/LogGenerator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loggenerator_test.dir/build.make CMakeFiles/loggenerator_test.dir/src/common/LogGenerator.cpp.i
 .PHONY : src/common/LogGenerator.cpp.i
 
 src/common/LogGenerator.s: src/common/LogGenerator.cpp.s
@@ -247,7 +324,8 @@ src/common/LogGenerator.s: src/common/LogGenerator.cpp.s
 
 # target to generate assembly for a file
 src/common/LogGenerator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/common.dir/build.make CMakeFiles/common.dir/src/common/LogGenerator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/LogGenerator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loggenerator_test.dir/build.make CMakeFiles/loggenerator_test.dir/src/common/LogGenerator.cpp.s
 .PHONY : src/common/LogGenerator.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -255,7 +333,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis.dir/build.make CMakeFiles/user_analysis.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -263,7 +341,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis.dir/build.make CMakeFiles/user_analysis.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -271,15 +349,42 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis.dir/build.make CMakeFiles/user_analysis.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/master/MasterNode.o: src/master/MasterNode.cpp.o
+.PHONY : src/master/MasterNode.o
+
+# target to build an object file
+src/master/MasterNode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/master/MasterNode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/master/MasterNode.cpp.o
+.PHONY : src/master/MasterNode.cpp.o
+
+src/master/MasterNode.i: src/master/MasterNode.cpp.i
+.PHONY : src/master/MasterNode.i
+
+# target to preprocess a source file
+src/master/MasterNode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/master/MasterNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/master/MasterNode.cpp.i
+.PHONY : src/master/MasterNode.cpp.i
+
+src/master/MasterNode.s: src/master/MasterNode.cpp.s
+.PHONY : src/master/MasterNode.s
+
+# target to generate assembly for a file
+src/master/MasterNode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/master/MasterNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/master/MasterNode.cpp.s
+.PHONY : src/master/MasterNode.cpp.s
 
 tests/DatabaseHandler_test.o: tests/DatabaseHandler_test.cpp.o
 .PHONY : tests/DatabaseHandler_test.o
 
 # target to build an object file
 tests/DatabaseHandler_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DatabaseHandlerTest.dir/build.make CMakeFiles/DatabaseHandlerTest.dir/tests/DatabaseHandler_test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/tests/DatabaseHandler_test.cpp.o
 .PHONY : tests/DatabaseHandler_test.cpp.o
 
 tests/DatabaseHandler_test.i: tests/DatabaseHandler_test.cpp.i
@@ -287,7 +392,7 @@ tests/DatabaseHandler_test.i: tests/DatabaseHandler_test.cpp.i
 
 # target to preprocess a source file
 tests/DatabaseHandler_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DatabaseHandlerTest.dir/build.make CMakeFiles/DatabaseHandlerTest.dir/tests/DatabaseHandler_test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/tests/DatabaseHandler_test.cpp.i
 .PHONY : tests/DatabaseHandler_test.cpp.i
 
 tests/DatabaseHandler_test.s: tests/DatabaseHandler_test.cpp.s
@@ -295,7 +400,7 @@ tests/DatabaseHandler_test.s: tests/DatabaseHandler_test.cpp.s
 
 # target to generate assembly for a file
 tests/DatabaseHandler_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DatabaseHandlerTest.dir/build.make CMakeFiles/DatabaseHandlerTest.dir/tests/DatabaseHandler_test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/tests/DatabaseHandler_test.cpp.s
 .PHONY : tests/DatabaseHandler_test.cpp.s
 
 tests/LogGenerator_test.o: tests/LogGenerator_test.cpp.o
@@ -303,7 +408,7 @@ tests/LogGenerator_test.o: tests/LogGenerator_test.cpp.o
 
 # target to build an object file
 tests/LogGenerator_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/tests/LogGenerator_test.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loggenerator_test.dir/build.make CMakeFiles/loggenerator_test.dir/tests/LogGenerator_test.cpp.o
 .PHONY : tests/LogGenerator_test.cpp.o
 
 tests/LogGenerator_test.i: tests/LogGenerator_test.cpp.i
@@ -311,7 +416,7 @@ tests/LogGenerator_test.i: tests/LogGenerator_test.cpp.i
 
 # target to preprocess a source file
 tests/LogGenerator_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/tests/LogGenerator_test.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loggenerator_test.dir/build.make CMakeFiles/loggenerator_test.dir/tests/LogGenerator_test.cpp.i
 .PHONY : tests/LogGenerator_test.cpp.i
 
 tests/LogGenerator_test.s: tests/LogGenerator_test.cpp.s
@@ -319,8 +424,32 @@ tests/LogGenerator_test.s: tests/LogGenerator_test.cpp.s
 
 # target to generate assembly for a file
 tests/LogGenerator_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/LogGeneratorTest.dir/build.make CMakeFiles/LogGeneratorTest.dir/tests/LogGenerator_test.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/loggenerator_test.dir/build.make CMakeFiles/loggenerator_test.dir/tests/LogGenerator_test.cpp.s
 .PHONY : tests/LogGenerator_test.cpp.s
+
+tests/MasterNode_test.o: tests/MasterNode_test.cpp.o
+.PHONY : tests/MasterNode_test.o
+
+# target to build an object file
+tests/MasterNode_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/tests/MasterNode_test.cpp.o
+.PHONY : tests/MasterNode_test.cpp.o
+
+tests/MasterNode_test.i: tests/MasterNode_test.cpp.i
+.PHONY : tests/MasterNode_test.i
+
+# target to preprocess a source file
+tests/MasterNode_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/tests/MasterNode_test.cpp.i
+.PHONY : tests/MasterNode_test.cpp.i
+
+tests/MasterNode_test.s: tests/MasterNode_test.cpp.s
+.PHONY : tests/MasterNode_test.s
+
+# target to generate assembly for a file
+tests/MasterNode_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/tests/MasterNode_test.cpp.s
+.PHONY : tests/MasterNode_test.cpp.s
 
 # Help Target
 help:
@@ -331,10 +460,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... DatabaseHandlerTest"
-	@echo "... LogGeneratorTest"
-	@echo "... common"
-	@echo "... user_analysis"
+	@echo "... databasehandler_test"
+	@echo "... loggenerator_test"
+	@echo "... masternode_test"
+	@echo "... user_analysis_app"
+	@echo "... generated/user_analysis.grpc.pb.o"
+	@echo "... generated/user_analysis.grpc.pb.i"
+	@echo "... generated/user_analysis.grpc.pb.s"
+	@echo "... generated/user_analysis.pb.o"
+	@echo "... generated/user_analysis.pb.i"
+	@echo "... generated/user_analysis.pb.s"
 	@echo "... src/common/ConfigReader.o"
 	@echo "... src/common/ConfigReader.i"
 	@echo "... src/common/ConfigReader.s"
@@ -347,12 +482,18 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/master/MasterNode.o"
+	@echo "... src/master/MasterNode.i"
+	@echo "... src/master/MasterNode.s"
 	@echo "... tests/DatabaseHandler_test.o"
 	@echo "... tests/DatabaseHandler_test.i"
 	@echo "... tests/DatabaseHandler_test.s"
 	@echo "... tests/LogGenerator_test.o"
 	@echo "... tests/LogGenerator_test.i"
 	@echo "... tests/LogGenerator_test.s"
+	@echo "... tests/MasterNode_test.o"
+	@echo "... tests/MasterNode_test.i"
+	@echo "... tests/MasterNode_test.s"
 .PHONY : help
 
 
