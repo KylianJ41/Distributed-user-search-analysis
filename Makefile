@@ -181,6 +181,19 @@ loggenerator_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/loggenerator_test.dir/build.make CMakeFiles/loggenerator_test.dir/build
 .PHONY : loggenerator_test/fast
 
+#=============================================================================
+# Target rules for targets named workernode_test
+
+# Build rule for target.
+workernode_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 workernode_test
+.PHONY : workernode_test
+
+# fast build rule for target.
+workernode_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/build
+.PHONY : workernode_test/fast
+
 generated/user_analysis.grpc.pb.o: generated/user_analysis.grpc.pb.cc.o
 .PHONY : generated/user_analysis.grpc.pb.o
 
@@ -189,6 +202,7 @@ generated/user_analysis.grpc.pb.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.grpc.pb.cc.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.grpc.pb.cc.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.grpc.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/generated/user_analysis.grpc.pb.cc.o
 .PHONY : generated/user_analysis.grpc.pb.cc.o
 
 generated/user_analysis.grpc.pb.i: generated/user_analysis.grpc.pb.cc.i
@@ -199,6 +213,7 @@ generated/user_analysis.grpc.pb.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.grpc.pb.cc.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.grpc.pb.cc.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.grpc.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/generated/user_analysis.grpc.pb.cc.i
 .PHONY : generated/user_analysis.grpc.pb.cc.i
 
 generated/user_analysis.grpc.pb.s: generated/user_analysis.grpc.pb.cc.s
@@ -209,6 +224,7 @@ generated/user_analysis.grpc.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.grpc.pb.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.grpc.pb.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.grpc.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/generated/user_analysis.grpc.pb.cc.s
 .PHONY : generated/user_analysis.grpc.pb.cc.s
 
 generated/user_analysis.pb.o: generated/user_analysis.pb.cc.o
@@ -219,6 +235,7 @@ generated/user_analysis.pb.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.pb.cc.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.pb.cc.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/generated/user_analysis.pb.cc.o
 .PHONY : generated/user_analysis.pb.cc.o
 
 generated/user_analysis.pb.i: generated/user_analysis.pb.cc.i
@@ -229,6 +246,7 @@ generated/user_analysis.pb.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.pb.cc.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.pb.cc.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/generated/user_analysis.pb.cc.i
 .PHONY : generated/user_analysis.pb.cc.i
 
 generated/user_analysis.pb.s: generated/user_analysis.pb.cc.s
@@ -239,6 +257,7 @@ generated/user_analysis.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/generated/user_analysis.pb.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/generated/user_analysis.pb.cc.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/generated/user_analysis.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/generated/user_analysis.pb.cc.s
 .PHONY : generated/user_analysis.pb.cc.s
 
 src/common/ConfigReader.o: src/common/ConfigReader.cpp.o
@@ -249,6 +268,7 @@ src/common/ConfigReader.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/ConfigReader.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/ConfigReader.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/ConfigReader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/src/common/ConfigReader.cpp.o
 .PHONY : src/common/ConfigReader.cpp.o
 
 src/common/ConfigReader.i: src/common/ConfigReader.cpp.i
@@ -259,6 +279,7 @@ src/common/ConfigReader.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/ConfigReader.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/ConfigReader.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/ConfigReader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/src/common/ConfigReader.cpp.i
 .PHONY : src/common/ConfigReader.cpp.i
 
 src/common/ConfigReader.s: src/common/ConfigReader.cpp.s
@@ -269,6 +290,7 @@ src/common/ConfigReader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/ConfigReader.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/ConfigReader.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/ConfigReader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/src/common/ConfigReader.cpp.s
 .PHONY : src/common/ConfigReader.cpp.s
 
 src/common/DatabaseHandler.o: src/common/DatabaseHandler.cpp.o
@@ -279,6 +301,7 @@ src/common/DatabaseHandler.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/DatabaseHandler.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/DatabaseHandler.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/DatabaseHandler.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/src/common/DatabaseHandler.cpp.o
 .PHONY : src/common/DatabaseHandler.cpp.o
 
 src/common/DatabaseHandler.i: src/common/DatabaseHandler.cpp.i
@@ -289,6 +312,7 @@ src/common/DatabaseHandler.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/DatabaseHandler.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/DatabaseHandler.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/DatabaseHandler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/src/common/DatabaseHandler.cpp.i
 .PHONY : src/common/DatabaseHandler.cpp.i
 
 src/common/DatabaseHandler.s: src/common/DatabaseHandler.cpp.s
@@ -299,6 +323,7 @@ src/common/DatabaseHandler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/common/DatabaseHandler.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/common/DatabaseHandler.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/databasehandler_test.dir/build.make CMakeFiles/databasehandler_test.dir/src/common/DatabaseHandler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/src/common/DatabaseHandler.cpp.s
 .PHONY : src/common/DatabaseHandler.cpp.s
 
 src/common/LogGenerator.o: src/common/LogGenerator.cpp.o
@@ -379,6 +404,33 @@ src/master/MasterNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/src/master/MasterNode.cpp.s
 .PHONY : src/master/MasterNode.cpp.s
 
+src/worker/WorkerNode.o: src/worker/WorkerNode.cpp.o
+.PHONY : src/worker/WorkerNode.o
+
+# target to build an object file
+src/worker/WorkerNode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/worker/WorkerNode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/src/worker/WorkerNode.cpp.o
+.PHONY : src/worker/WorkerNode.cpp.o
+
+src/worker/WorkerNode.i: src/worker/WorkerNode.cpp.i
+.PHONY : src/worker/WorkerNode.i
+
+# target to preprocess a source file
+src/worker/WorkerNode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/worker/WorkerNode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/src/worker/WorkerNode.cpp.i
+.PHONY : src/worker/WorkerNode.cpp.i
+
+src/worker/WorkerNode.s: src/worker/WorkerNode.cpp.s
+.PHONY : src/worker/WorkerNode.s
+
+# target to generate assembly for a file
+src/worker/WorkerNode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/user_analysis_app.dir/build.make CMakeFiles/user_analysis_app.dir/src/worker/WorkerNode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/src/worker/WorkerNode.cpp.s
+.PHONY : src/worker/WorkerNode.cpp.s
+
 tests/DatabaseHandler_test.o: tests/DatabaseHandler_test.cpp.o
 .PHONY : tests/DatabaseHandler_test.o
 
@@ -451,6 +503,30 @@ tests/MasterNode_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/masternode_test.dir/build.make CMakeFiles/masternode_test.dir/tests/MasterNode_test.cpp.s
 .PHONY : tests/MasterNode_test.cpp.s
 
+tests/WorkerNode_test.o: tests/WorkerNode_test.cpp.o
+.PHONY : tests/WorkerNode_test.o
+
+# target to build an object file
+tests/WorkerNode_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/tests/WorkerNode_test.cpp.o
+.PHONY : tests/WorkerNode_test.cpp.o
+
+tests/WorkerNode_test.i: tests/WorkerNode_test.cpp.i
+.PHONY : tests/WorkerNode_test.i
+
+# target to preprocess a source file
+tests/WorkerNode_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/tests/WorkerNode_test.cpp.i
+.PHONY : tests/WorkerNode_test.cpp.i
+
+tests/WorkerNode_test.s: tests/WorkerNode_test.cpp.s
+.PHONY : tests/WorkerNode_test.s
+
+# target to generate assembly for a file
+tests/WorkerNode_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/workernode_test.dir/build.make CMakeFiles/workernode_test.dir/tests/WorkerNode_test.cpp.s
+.PHONY : tests/WorkerNode_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -464,6 +540,7 @@ help:
 	@echo "... loggenerator_test"
 	@echo "... masternode_test"
 	@echo "... user_analysis_app"
+	@echo "... workernode_test"
 	@echo "... generated/user_analysis.grpc.pb.o"
 	@echo "... generated/user_analysis.grpc.pb.i"
 	@echo "... generated/user_analysis.grpc.pb.s"
@@ -485,6 +562,9 @@ help:
 	@echo "... src/master/MasterNode.o"
 	@echo "... src/master/MasterNode.i"
 	@echo "... src/master/MasterNode.s"
+	@echo "... src/worker/WorkerNode.o"
+	@echo "... src/worker/WorkerNode.i"
+	@echo "... src/worker/WorkerNode.s"
 	@echo "... tests/DatabaseHandler_test.o"
 	@echo "... tests/DatabaseHandler_test.i"
 	@echo "... tests/DatabaseHandler_test.s"
@@ -494,6 +574,9 @@ help:
 	@echo "... tests/MasterNode_test.o"
 	@echo "... tests/MasterNode_test.i"
 	@echo "... tests/MasterNode_test.s"
+	@echo "... tests/WorkerNode_test.o"
+	@echo "... tests/WorkerNode_test.i"
+	@echo "... tests/WorkerNode_test.s"
 .PHONY : help
 
 

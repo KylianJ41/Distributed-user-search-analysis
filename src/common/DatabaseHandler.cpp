@@ -18,27 +18,49 @@ DatabaseHandler::DatabaseHandler(const std::string &configFilename)
             " user=" + config.get("database", "user") +
             " password=" + config.get("database", "password");
 
-        std::cout << "Connecting with: " << connString << std::endl;
-
-        conn = std::make_unique<pqxx::connection>(connString);
-
-        if (!conn)
-        {
-            throw std::runtime_error("Failed to create database connection");
-        }
-
-        if (!conn->is_open())
-        {
-            throw std::runtime_error("Database connection is not open");
-        }
-
-        std::cout << "Connected successfully" << std::endl;
+        initializeConnection(connString);
     }
     catch (const std::exception &e)
     {
         std::cerr << "Error in DatabaseHandler constructor: " << e.what() << std::endl;
         throw;
     }
+}
+
+DatabaseHandler::DatabaseHandler(const std::string &host, const std::string &port, const std::string &dbname,
+                                 const std::string &user, const std::string &password)
+{
+    try
+    {
+        std::string connString = "host=" + host + " port=" + port + " dbname=" + dbname +
+                                 " user=" + user + " password=" + password;
+
+        initializeConnection(connString);
+    }
+    catch (const std::exception &e)
+    {
+        std::cerr << "Error in DatabaseHandler constructor: " << e.what() << std::endl;
+        throw;
+    }
+}
+
+void DatabaseHandler::initializeConnection(const std::string &connString)
+{
+    std::cout << "Connecting with: " << connString << std::endl;
+
+    conn = std::make_unique<pqxx::connection>(connString);
+
+    if (!conn)
+    {
+        throw std::runtime_error("Failed to create database connection");
+    }
+
+    if (!conn->is_open())
+    {
+        throw std::runtime_error("Database connection is not open");
+    }
+
+    std::cout << "Connected successfully" << std::endl;
 }
 
 void DatabaseHandler::createTable(const std::string &tableName, const std::vector<std::string> &columns)
