@@ -1,10 +1,10 @@
-Start testing: Aug 06 17:05 CEST
+Start testing: Aug 07 16:07 CEST
 ----------------------------------------------------------
 1/4 Testing: MasterNodeTest
 1/4 Test: MasterNodeTest
 Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/masternode_test"
 Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
-"MasterNodeTest" start time: Aug 06 17:05 CEST
+"MasterNodeTest" start time: Aug 07 16:07 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 6 tests from 1 test suite.
@@ -35,7 +35,7 @@ Created task with ID: task_8
 Created task with ID: task_9
 Created task with ID: task_10
 Finished initializing task queue. Total tasks created: 10
-[       OK ] MasterNodeTest.InitializeTaskQueue (40 ms)
+[       OK ] MasterNodeTest.InitializeTaskQueue (43 ms)
 [ RUN      ] MasterNodeTest.GetNextTaskSuccess
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
 Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
@@ -75,7 +75,7 @@ Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
 Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
 Connected successfully
-[       OK ] MasterNodeTest.GetNextTaskEmptyQueue (21 ms)
+[       OK ] MasterNodeTest.GetNextTaskEmptyQueue (13 ms)
 [ RUN      ] MasterNodeTest.SubmitTaskResult
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
 Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
@@ -104,7 +104,7 @@ Finished initializing task queue. Total tasks created: 10
 Submitting result for task ID: task_1
 Number of created task IDs: 10
 Task result submitted successfully
-[       OK ] MasterNodeTest.SubmitTaskResult (22 ms)
+[       OK ] MasterNodeTest.SubmitTaskResult (20 ms)
 [ RUN      ] MasterNodeTest.GetAggregatedResults
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
 Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
@@ -136,7 +136,7 @@ Task result submitted successfully
 Submitting result for task ID: task_10
 Number of created task IDs: 9
 Task result submitted successfully
-[       OK ] MasterNodeTest.GetAggregatedResults (18 ms)
+[       OK ] MasterNodeTest.GetAggregatedResults (19 ms)
 [ RUN      ] MasterNodeTest.SubmitInvalidTaskResult
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
 Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
@@ -165,17 +165,17 @@ Finished initializing task queue. Total tasks created: 10
 Submitting result for task ID: task_0
 Number of created task IDs: 10
 Task ID not found in createdTaskIds
-[       OK ] MasterNodeTest.SubmitInvalidTaskResult (20 ms)
-[----------] 6 tests from MasterNodeTest (147 ms total)
+[       OK ] MasterNodeTest.SubmitInvalidTaskResult (25 ms)
+[----------] 6 tests from MasterNodeTest (146 ms total)
 
 [----------] Global test environment tear-down
-[==========] 6 tests from 1 test suite ran. (147 ms total)
+[==========] 6 tests from 1 test suite ran. (146 ms total)
 [  PASSED  ] 6 tests.
 <end of output>
 Test time =   0.21 sec
 ----------------------------------------------------------
 Test Passed.
-"MasterNodeTest" end time: Aug 06 17:05 CEST
+"MasterNodeTest" end time: Aug 07 16:07 CEST
 "MasterNodeTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -183,7 +183,7 @@ Test Passed.
 2/4 Test: DatabaseHandlerTest
 Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/databasehandler_test"
 Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
-"DatabaseHandlerTest" start time: Aug 06 17:05 CEST
+"DatabaseHandlerTest" start time: Aug 07 16:07 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 2 tests from 1 test suite.
@@ -267,7 +267,7 @@ Cleaning up test data
 Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
 Query executed successfully
 Test data cleaned up
-[       OK ] DatabaseHandlerTest.InsertAndRetrieveLogs (74 ms)
+[       OK ] DatabaseHandlerTest.InsertAndRetrieveLogs (43 ms)
 [ RUN      ] DatabaseHandlerTest.CreateTableIdempotent
 Setting up test environment
 Current working directory: "/home/kylian/Documents/Code/cpp/UserAnalysis"
@@ -302,17 +302,17 @@ Cleaning up test data
 Executing query: DELETE FROM search_logs WHERE user_id BETWEEN 1 AND 100
 Query executed successfully
 Test data cleaned up
-[       OK ] DatabaseHandlerTest.CreateTableIdempotent (32 ms)
-[----------] 2 tests from DatabaseHandlerTest (106 ms total)
+[       OK ] DatabaseHandlerTest.CreateTableIdempotent (26 ms)
+[----------] 2 tests from DatabaseHandlerTest (70 ms total)
 
 [----------] Global test environment tear-down
-[==========] 2 tests from 1 test suite ran. (106 ms total)
+[==========] 2 tests from 1 test suite ran. (70 ms total)
 [  PASSED  ] 2 tests.
 <end of output>
-Test time =   0.14 sec
+Test time =   0.13 sec
 ----------------------------------------------------------
 Test Passed.
-"DatabaseHandlerTest" end time: Aug 06 17:05 CEST
+"DatabaseHandlerTest" end time: Aug 07 16:07 CEST
 "DatabaseHandlerTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -320,7 +320,7 @@ Test Passed.
 3/4 Test: LogGeneratorTest
 Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/loggenerator_test"
 Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
-"LogGeneratorTest" start time: Aug 06 17:05 CEST
+"LogGeneratorTest" start time: Aug 07 16:07 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 1 test from 1 test suite.
@@ -337,7 +337,7 @@ Output:
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"LogGeneratorTest" end time: Aug 06 17:05 CEST
+"LogGeneratorTest" end time: Aug 07 16:07 CEST
 "LogGeneratorTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -345,37 +345,52 @@ Test Passed.
 4/4 Test: WorkerNodeTest
 Command: "/home/kylian/Documents/Code/cpp/UserAnalysis/workernode_test"
 Directory: /home/kylian/Documents/Code/cpp/UserAnalysis
-"WorkerNodeTest" start time: Aug 06 17:05 CEST
+"WorkerNodeTest" start time: Aug 07 16:07 CEST
 Output:
 ----------------------------------------------------------
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 1 test from WorkerNodeTest
 [ RUN      ] WorkerNodeTest.ProcessTaskTest
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/.env"
+Loading .env file from: /home/kylian/Documents/Code/cpp/UserAnalysis/.env
+Loaded environment variable: DB_HOST
+Loaded environment variable: DB_PORT
+Loaded environment variable: DB_NAME
+Loaded environment variable: DB_USER
+Loaded environment variable: DB_PASSWORD
+Initializing DatabaseHandler with config: config.ini
 Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
-Connecting with: host=${DB_HOST} port=${DB_PORT} dbname=${DB_NAME} user=${DB_USER} password=${DB_PASSWORD}
-Error in DatabaseHandler constructor: invalid integer value "${DB_PORT}" for connection option "port"
+Found file: "/home/kylian/Documents/Code/cpp/UserAnalysis/config.ini"
+Connecting with: host=localhost port=5432 dbname=clients_stats user=kylian password=pass
+Connected successfully
+Executing query: SELECT search_query FROM search_logs WHERE user_id BETWEEN 1 AND 100
+Query executed successfully
+No more tasks available. Exiting.
+/home/kylian/Documents/Code/cpp/UserAnalysis/tests/WorkerNode_test.cpp:59: Failure
+Actual function call count doesn't match EXPECT_CALL(*db_handler_ptr, executeQuery(testing::_))...
+         Expected: to be called once
+           Actual: never called - unsatisfied and active
 
-unknown file: Failure
-C++ exception with description "invalid integer value "${DB_PORT}" for connection option "port"
-" thrown in SetUp().
-
-[  FAILED  ] WorkerNodeTest.ProcessTaskTest (2 ms)
-[----------] 1 test from WorkerNodeTest (2 ms total)
+[  FAILED  ] WorkerNodeTest.ProcessTaskTest (15 ms)
+[----------] 1 test from WorkerNodeTest (15 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (3 ms total)
+[==========] 1 test from 1 test suite ran. (15 ms total)
 [  PASSED  ] 0 tests.
 [  FAILED  ] 1 test, listed below:
 [  FAILED  ] WorkerNodeTest.ProcessTaskTest
 
  1 FAILED TEST
+
+/home/kylian/Documents/Code/cpp/UserAnalysis/tests/WorkerNode_test.cpp:59: ERROR: this mock object (used in test WorkerNodeTest.ProcessTaskTest) should be deleted but never is. Its address is @0x646413585470.
+ERROR: 1 leaked mock object found at program exit. Expectations on a mock object are verified when the object is destructed. Leaking a mock means that its expectations aren't verified, which is usually a test bug. If you really intend to leak a mock, you can suppress this error using testing::Mock::AllowLeak(mock_object), or you may use a fake or stub instead of a mock.
 <end of output>
 Test time =   0.06 sec
 ----------------------------------------------------------
 Test Failed.
-"WorkerNodeTest" end time: Aug 06 17:05 CEST
+"WorkerNodeTest" end time: Aug 07 16:07 CEST
 "WorkerNodeTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 06 17:05 CEST
+End testing: Aug 07 16:07 CEST

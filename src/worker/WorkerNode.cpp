@@ -1,18 +1,20 @@
 #include "../include/WorkerNode.h"
+#include "../include/TaskInterface.h"
 #include <iostream>
 
 WorkerNode::WorkerNode(const std::string &master_address, std::unique_ptr<DatabaseHandler> db_handler)
     : db_handler_(std::move(db_handler))
 {
     auto channel = grpc::CreateChannel(master_address, grpc::InsecureChannelCredentials());
-    stub_ = user_analysis::UserAnalysisService::NewStub(channel);
+    auto stub = user_analysis::UserAnalysisService::NewStub(channel);
+    task_interface_ = std::make_unique<GrpcTaskInterface>(std::move(stub));
 }
 
-WorkerNode::WorkerNode(std::shared_ptr<user_analysis::UserAnalysisService::StubInterface> stub,
+// Constructor for testing
+WorkerNode::WorkerNode(std::unique_ptr<TaskInterface> task_interface,
                        std::unique_ptr<DatabaseHandler> db_handler)
-    : stub_(std::move(stub)), db_handler_(std::move(db_handler))
-{
-}
+    : task_interface_(std::move(task_interface)),
+      db_handler_(std::move(db_handler)) {}
 
 void WorkerNode::Run()
 {
@@ -22,24 +24,31 @@ void WorkerNode::Run()
         user_analysis::GetTaskRequest request;
         user_analysis::Task task;
 
-        auto status = stub_->GetTask(&context, request, &task);
+        auto status = task_interface_->GetTask(&context, request, &task);
 
-        if (status.ok())
+        if (!status.ok())
         {
-            auto result = ProcessTask(task);
-
-            grpc::ClientContext submit_context;
-            user_analysis::SubmitResultResponse response;
-            stub_->SubmitResult(&submit_context, result, &response);
-        }
-        else if (status.error_code() == grpc::StatusCode::NOT_FOUND)
-        {
-            std::cout << "No more tasks available. Exiting." << std::endl;
+            if (status.error_code() == grpc::StatusCode::NOT_FOUND)
+            {
+                std::cout << "No more tasks available. Exiting." << std::endl;
+            }
+            else
+            {
+                std::cerr << "Error getting task: " << status.error_message() << std::endl;
+            }
             break;
         }
-        else
+
+        auto result = ProcessTask(task);
+
+        grpc::ClientContext submit_context;
+        user_analysis::SubmitResultResponse response;
+        status = task_interface_->SubmitResult(&submit_context, result, &response);
+
+        if (!status.ok())
         {
-            std::cerr << "Error: " << status.error_message() << std::endl;
+            std::cerr << "Error submitting result: " << status.error_message() << std::endl;
+            break;
         }
     }
 }
